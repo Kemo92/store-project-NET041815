@@ -7,8 +7,8 @@
     <ProjectGuid>{FC7315F4-7430-4410-A8A9-80E2A58B728F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleUI</RootNamespace>
-    <AssemblyName>ConsoleUI</AssemblyName>
+    <RootNamespace>StoreProject.UI.ConsoleApplication</RootNamespace>
+    <AssemblyName>StoreProject.UI.ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -5,10 +5,16 @@ using System.Text;
 
 namespace StoreProject.Core
 {
+    /// <summary>
+    /// Represents a store
+    /// </summary>
     public class Store
     {
         private IList<Product> products;
 
+        /// <summary>
+        /// Constructor that initializes default values
+        /// </summary>
         public Store()
         {
             products = new List<Product>
@@ -18,6 +24,9 @@ namespace StoreProject.Core
             };
         }
 
+        /// <summary>
+        /// Gets a list off all the products in the store
+        /// </summary>
         public IEnumerable<Product> AllProducts()
         {
             return products;

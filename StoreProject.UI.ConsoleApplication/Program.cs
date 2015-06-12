@@ -5,10 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleUI
+namespace StoreProject.UI.ConsoleApplication
 {
+    /// <summary>
+    /// Main program class
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Entry point of the application
+        /// </summary>
         static void Main(string[] args)
         {
             var store = new Store();
