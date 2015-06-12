@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProject.UI.ConsoleApplication", "StoreProject.UI.ConsoleApplication\StoreProject.UI.ConsoleApplication.csproj", "{FC7315F4-7430-4410-A8A9-80E2A58B728F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "UI\ConsoleApplication\ConsoleApplication.csproj", "{FC7315F4-7430-4410-A8A9-80E2A58B728F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreProject.Core", "StoreProject.Core\StoreProject.Core.csproj", "{69B78174-BDCC-4CC1-8623-38AAE0E3876E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{69B78174-BDCC-4CC1-8623-38AAE0E3876E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C553F116-4CEF-4687-9B6B-0D6EF1B108E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC7315F4-7430-4410-A8A9-80E2A58B728F} = {C553F116-4CEF-4687-9B6B-0D6EF1B108E0}
 	EndGlobalSection
 EndGlobal
