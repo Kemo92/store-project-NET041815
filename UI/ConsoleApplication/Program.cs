@@ -25,7 +25,7 @@ namespace StoreProject.UI.ConsoleApplication
                 switch (ShowMainMenu())
                 {
                     case "l":
-                        ListProducts(store);
+                        new ListProductsUI(store).Run();
                         break;
                     case "a":
                         cart = cart ?? new Cart();
@@ -37,17 +37,6 @@ namespace StoreProject.UI.ConsoleApplication
                     case "q":
                         return;
                 }
-            }
-        }
-
-        /// <summary>
-        /// List a collection of products
-        /// </summary>
-        private static void ListProducts(Store store)
-        {
-            foreach (var product in store.AllProducts())
-            {
-                Console.WriteLine(product);
             }
         }
 
