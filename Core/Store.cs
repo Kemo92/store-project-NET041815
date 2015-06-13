@@ -34,7 +34,7 @@ namespace StoreProject.Core
 
         public Product FindProduct(string searchTerm)
         {
-            return products.FirstOrDefault(x => string.Equals(x.Sku, searchTerm, StringComparison.CurrentCultureIgnoreCase));
+            return products.FirstOrDefault(x => x.Sku.ToLower().Contains(searchTerm.ToLower()));
         }
     }
 }
