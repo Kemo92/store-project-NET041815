@@ -34,6 +34,11 @@ namespace StoreProject.Core
 
         public Product FindProduct(string searchTerm)
         {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return null;
+            }
+
             return products.FirstOrDefault(x => x.Sku.ToLower().Contains(searchTerm.ToLower()));
         }
     }
