@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70833071
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Tests\Core.Tests\Core.Tests.csproj", "{80D0A57E-F27D-4A26-84F3-3976F862CFBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication", "UI\WpfApplication\WpfApplication.csproj", "{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{80D0A57E-F27D-4A26-84F3-3976F862CFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D0A57E-F27D-4A26-84F3-3976F862CFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80D0A57E-F27D-4A26-84F3-3976F862CFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FC7315F4-7430-4410-A8A9-80E2A58B728F} = {C553F116-4CEF-4687-9B6B-0D6EF1B108E0}
 		{80D0A57E-F27D-4A26-84F3-3976F862CFBC} = {70833071-AAD6-4D8A-9E88-93E7DFDDB9FC}
+		{F17D9A7F-CF69-4F63-B1CC-29B2D9D00E6D} = {C553F116-4CEF-4687-9B6B-0D6EF1B108E0}
 	EndGlobalSection
 EndGlobal
