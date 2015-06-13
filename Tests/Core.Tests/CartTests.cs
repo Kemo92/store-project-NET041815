@@ -31,6 +31,17 @@ namespace StoreProjects.Core.Tests
         }
 
         [Fact]
+        public void Quanity_CannotAddANegativeQuanity()
+        {
+            var product = new Product("Foo", "Bar", 3.50m);
+            var cart = new Cart();
+
+            Action act = () => cart.Add(product, -2);
+            act.ShouldThrow<Exception>();
+        }
+
+
+        [Fact]
         public void Price_ReturnsSumOfProductPrices()
         {
             var product = new Product("Foo", "Bar", 3.50m);

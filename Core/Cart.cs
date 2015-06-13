@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,23 +13,30 @@ namespace StoreProject.Core
 
         public void Add(Product product, int quantity)
         {
+            if (product == null)
+            {
+                throw new ArgumentNullException("product");
+            }
+
+            if (quantity < 0)
+            {
+                throw new ArgumentOutOfRangeException("quantity");
+            }
+
+            if (quantity == 0)
+            {
+                return;
+            }
+
             var item = items.SingleOrDefault(x => x.Product == product);
 
-            if (product == null)
-                throw new ArgumentNullException();
-
-            if (item == null && quantity > 0)
+            if (item == null)
             {
                 items.Add(new CartItem(product, quantity));
             }
-            else if (item != null)
+            else
             {
                 item.ChangeQuantityBy(quantity);
-
-                if (item.Quantity == 0)
-                {
-                    items.Remove(item);
-                }
             }
         }
 
