@@ -23,7 +23,7 @@ namespace StoreProject.UI.ConsoleApplication
 
             while (true)
             {
-                switch (ShowMainMenu())
+                switch (ShowMainMenu(userInterface))
                 {
                     case "l":
                         new ListProductsUI(store).Run(userInterface);
@@ -44,7 +44,7 @@ namespace StoreProject.UI.ConsoleApplication
         /// <summary>
         /// Show the main store menu
         /// </summary>
-        private static string ShowMainMenu()
+        private static string ShowMainMenu(IUserInterface userInterface)
         {
             Console.WriteLine("Store Main Menu");
             Console.WriteLine("===============");
@@ -53,7 +53,7 @@ namespace StoreProject.UI.ConsoleApplication
             Console.WriteLine("s) Show cart");
             Console.WriteLine("q) Quit");
 
-            return Console.ReadLine().Trim().ToLower();
+            return userInterface.GetChoice();
         }
     }
 }

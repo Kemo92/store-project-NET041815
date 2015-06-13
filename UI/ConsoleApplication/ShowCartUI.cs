@@ -20,33 +20,33 @@ namespace StoreProject.UI.ConsoleApplication
 
         public void Run(IUserInterface userInterface)
         {
-            Console.Clear();
+            userInterface.Clear();
 
             if (cart == null || !cart.Items.Any())
             {
-                Console.WriteLine("Nothing in cart");
+                userInterface.WriteLine("Nothing in cart");
             }
             else
             {
-                Console.WriteLine("Total: ${0}", cart.Price);
+                userInterface.WriteLine("Total: ${0}", cart.Price);
 
-                Console.WriteLine();
-                Console.WriteLine("{0} {1} {2}",
+                userInterface.WriteLine();
+                userInterface.WriteLine("{0} {1} {2}",
                         "Product".PadRight(ProductPadding),
                         "Quantity".PadLeft(QuantityPadding),
                         "Total".PadLeft(PricePadding));
 
                 foreach (var item in cart.Items)
                 {
-                    Console.WriteLine("{0} {1} {2}",
+                    userInterface.WriteLine("{0} {1} {2}",
                         item.Product.Name.PadRight(ProductPadding),
                         item.Quantity.ToString().PadLeft(QuantityPadding),
                         item.Price.ToString().PadLeft(PricePadding));
                 }
             }
 
-            Console.WriteLine();
-            Console.WriteLine();
+            userInterface.WriteLine();
+            userInterface.WriteLine();
         }
     }
 }

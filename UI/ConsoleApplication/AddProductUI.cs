@@ -19,11 +19,11 @@ namespace StoreProject.UI.ConsoleApplication
 
         public void Run(IUserInterface userInterface)
         {
-            var product = GetProductFromUser();
+            var product = GetProductFromUser(userInterface);
 
             if (product != null)
             {
-                var quantity = GetQuantityFromUser();
+                var quantity = GetQuantityFromUser(userInterface);
 
                 if (quantity.HasValue)
                 {
@@ -32,12 +32,12 @@ namespace StoreProject.UI.ConsoleApplication
             }
         }
 
-        private int? GetQuantityFromUser()
+        private int? GetQuantityFromUser(IUserInterface userInterface)
         {
             while (true)
             {
                 Console.Write("Enter quantity (m to return to main menu): ");
-                var input = Console.ReadLine().Trim();
+                var input = userInterface.GetChoice();
                 if (input == "m")
                 {
                     return null;
@@ -51,7 +51,7 @@ namespace StoreProject.UI.ConsoleApplication
             }
         }
 
-        private Product GetProductFromUser()
+        private Product GetProductFromUser(IUserInterface userInterface)
         {
             while (true)
             {
@@ -62,11 +62,11 @@ namespace StoreProject.UI.ConsoleApplication
                 
                 if (product == null)
                 {
-                    Console.WriteLine("Didn't find a product.");
-                    Console.WriteLine("s) Search again");
-                    Console.WriteLine("m) Main menu");
+                    userInterface.WriteLine("Didn't find a product.");
+                    userInterface.WriteLine("s) Search again");
+                    userInterface.WriteLine("m) Main menu");
 
-                    var input = Console.ReadLine().Trim();
+                    var input = userInterface.GetChoice();
                     if (input == "m")
                     {
                         return null;
@@ -74,10 +74,10 @@ namespace StoreProject.UI.ConsoleApplication
                 }
                 else
                 {
-                    Console.WriteLine("Found {0}", product);
-                    Console.WriteLine("c) Choose quantity");
-                    Console.WriteLine("s) Search again");
-                    Console.WriteLine("m) Main menu");
+                    userInterface.WriteLine("Found {0}", product);
+                    userInterface.WriteLine("c) Choose quantity");
+                    userInterface.WriteLine("s) Search again");
+                    userInterface.WriteLine("m) Main menu");
 
                     var input = Console.ReadLine().Trim();
                     if (input == "m")

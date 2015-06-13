@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StoreProject.UI.ConsoleApplication
 {
-    interface IShowUI
+    public interface IShowUI
     {
         void Run(IUserInterface userInterface);
     }

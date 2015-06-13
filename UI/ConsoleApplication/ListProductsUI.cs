@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreProject.UI.ConsoleApplication
 {
-    class ListProductsUI : IShowUI
+    public class ListProductsUI : IShowUI
     {
         private Store store;
 
