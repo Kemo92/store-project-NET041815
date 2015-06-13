@@ -28,5 +28,7 @@ namespace StoreProjects.Core.Tests
             cartItem.ChangeQuantityBy(2);
             cartItem.Quantity.Should().Be(5);
         }
+
+       
     }
 }
