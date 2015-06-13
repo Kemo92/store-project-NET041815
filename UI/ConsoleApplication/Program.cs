@@ -31,6 +31,9 @@ namespace StoreProject.UI.ConsoleApplication
                         cart = cart ?? new Cart();
                         new AddProductUI(store, cart).Run();
                         break;
+                    case "s":
+                        new ShowCartUI(cart).Run();
+                        break;
                     case "q":
                         return;
                 }
@@ -57,6 +60,7 @@ namespace StoreProject.UI.ConsoleApplication
             Console.WriteLine("===============");
             Console.WriteLine("l) List products");
             Console.WriteLine("a) Add products to cart");
+            Console.WriteLine("s) Show cart");
             Console.WriteLine("q) Quit");
 
             return Console.ReadLine().Trim().ToLower();
