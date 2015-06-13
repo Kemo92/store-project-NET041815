@@ -10,8 +10,13 @@ namespace StoreProject.Core
     {
         public CartItem(Product product, int quantity)
         {
-            Product = product;
-            Quantity = quantity;
+            if (product == null)
+                throw new ArgumentNullException();
+            else
+            {
+                Product = product;
+                Quantity = quantity;
+            }
         }
 
         public Product Product { get; private set; }
