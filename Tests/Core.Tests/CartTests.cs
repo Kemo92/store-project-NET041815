@@ -50,5 +50,14 @@ namespace StoreProjects.Core.Tests
             cart.Add(product, 2);
             cart.Products.Should().HaveCount(1);
         }
+
+        [Fact]
+        public void Products_ReturnsNoProduct_WhenProductQuantityIsZero()
+        {
+            var product = new Product("Foo", "Bar", 3.50m);
+            var cart = new Cart();
+            cart.Add(product, 0);
+            Assert.Empty(cart.Products);
+        }
     }
 }
