@@ -18,6 +18,7 @@ namespace StoreProject.UI.ConsoleApplication
         static void Main(string[] args)
         {
             var store = new Store();
+            Cart cart = null;
 
             while (true)
             {
@@ -25,6 +26,10 @@ namespace StoreProject.UI.ConsoleApplication
                 {
                     case "l":
                         ListProducts(store);
+                        break;
+                    case "a":
+                        cart = cart ?? new Cart();
+                        new AddProductUI(store, cart).Run();
                         break;
                     case "q":
                         return;
@@ -51,6 +56,7 @@ namespace StoreProject.UI.ConsoleApplication
             Console.WriteLine("Store Main Menu");
             Console.WriteLine("===============");
             Console.WriteLine("l) List products");
+            Console.WriteLine("a) Add products to cart");
             Console.WriteLine("q) Quit");
 
             return Console.ReadLine().Trim().ToLower();

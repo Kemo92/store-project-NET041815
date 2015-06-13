@@ -31,5 +31,10 @@ namespace StoreProject.Core
         {
             return products;
         }
+
+        public Product FindProduct(string searchTerm)
+        {
+            return products.FirstOrDefault(x => string.Equals(x.Sku, searchTerm, StringComparison.CurrentCultureIgnoreCase));
+        }
     }
 }
