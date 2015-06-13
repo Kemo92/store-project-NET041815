@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreProject.UI.ConsoleApplication
 {
-    class AddProductUI
+    class AddProductUI : IShowUI
     {
         private Store store;
         private Cart cart;
@@ -17,7 +17,7 @@ namespace StoreProject.UI.ConsoleApplication
             this.cart = cart;
         }
 
-        internal void Run()
+        public void Run(IUserInterface userInterface)
         {
             var product = GetProductFromUser();
 

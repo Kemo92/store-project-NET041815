@@ -19,20 +19,21 @@ namespace StoreProject.UI.ConsoleApplication
         {
             var store = new Store();
             Cart cart = null;
+            IUserInterface userInterface = new ConsoleUserInterface();
 
             while (true)
             {
                 switch (ShowMainMenu())
                 {
                     case "l":
-                        new ListProductsUI(store).Run();
+                        new ListProductsUI(store).Run(userInterface);
                         break;
                     case "a":
                         cart = cart ?? new Cart();
-                        new AddProductUI(store, cart).Run();
+                        new AddProductUI(store, cart).Run(userInterface);
                         break;
                     case "s":
-                        new ShowCartUI(cart).Run();
+                        new ShowCartUI(cart).Run(userInterface);
                         break;
                     case "q":
                         return;

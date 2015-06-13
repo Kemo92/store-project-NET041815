@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreProject.UI.ConsoleApplication
 {
-    class ShowCartUI
+    class ShowCartUI : IShowUI
     {
         private const int QuantityPadding = 8;
         private const int PricePadding = 8;
@@ -18,7 +18,7 @@ namespace StoreProject.UI.ConsoleApplication
             this.cart = cart;
         }
 
-        internal void Run()
+        public void Run(IUserInterface userInterface)
         {
             Console.Clear();
 

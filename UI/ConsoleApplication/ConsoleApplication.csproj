@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddProductUI.cs" />
+    <Compile Include="ConsoleUserInterface.cs" />
+    <Compile Include="IShowUI.cs" />
+    <Compile Include="IUserInterface.cs" />
     <Compile Include="ListProductsUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

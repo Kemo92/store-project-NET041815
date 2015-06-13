@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StoreProject.UI.ConsoleApplication
 {
-    class ListProductsUI
+    class ListProductsUI : IShowUI
     {
         private Store store;
 
@@ -15,11 +15,11 @@ namespace StoreProject.UI.ConsoleApplication
             this.store = store;
         }
 
-        internal void Run()
+        public void Run(IUserInterface userInterface)
         {
             foreach (var product in store.AllProducts())
             {
-                Console.WriteLine(product);
+                userInterface.WriteLine(product);
             }
         }
     }
