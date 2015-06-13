@@ -29,6 +29,11 @@ namespace StoreProject.Core
         public void ChangeQuantityBy(int quantity)
         {
             Quantity += quantity;
+
+            if (Quantity <= 0)
+            {
+                Quantity = 0;
+            }
         }
     }
 }
