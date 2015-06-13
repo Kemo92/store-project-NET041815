@@ -12,6 +12,16 @@ namespace StoreProjects.Core.Tests
     public class CartTests
     {
         [Fact]
+        public void Add_ThrowsException_IfNullItemIsAdded()
+        {
+            Product nullProduct = null;
+            var cart = new Cart();
+
+            Action act = () => cart.Add(nullProduct, 1);
+            act.ShouldThrow<ArgumentNullException>();
+        }
+
+        [Fact]
         public void Add_AddsToCart_WithProductAndQuantity()
         {
             var product = new Product("Foo", "Bar", 3.50m);

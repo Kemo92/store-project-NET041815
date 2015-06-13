@@ -12,15 +12,21 @@ namespace StoreProject.Core
 
         public void Add(Product product, int quantity)
         {
-            var item = items.SingleOrDefault(x => x.Product == product);
+            if (product == null)
+                throw new ArgumentNullException();
 
-            if (item == null)
-            {
-                items.Add(new CartItem(product, quantity));
-            }
             else
             {
-                item.ChangeQuantityBy(quantity);
+                var item = items.SingleOrDefault(x => x.Product == product);
+
+                if (item == null)
+                {
+                    items.Add(new CartItem(product, quantity));
+                }
+                else
+                {
+                    item.ChangeQuantityBy(quantity);
+                }
             }
         }
 
