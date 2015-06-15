@@ -11,6 +11,8 @@
         <th>Name</th>
         <th>Price</th>
         <th></th>
+        <th>Quantity</th>
+        
     </tr>
     @foreach (var product in Model)
     {
@@ -18,7 +20,12 @@
             <td>@product.Sku</td>
             <td>@product.Name</td>
             <td>@product.Price</td>
-            <td>@Html.ActionLink("Details", "Details", new { id = product.Sku })</td>
+            <td>@Html.ActionLink("Details", "Details", new {id = product.Sku})</td>
+            <td>@using (Html.BeginForm("Add", "Cart", new { id = product.Sku }))
+            {
+                <input type="number" placeholder="Enter Quantity Here..." id="ProducyPageQuantity" name="quantity"  />
+                <input type="submit" value="Add to cart" />
+            }</td>
         </tr>
     }
 </table>
