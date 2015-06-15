@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -53,6 +54,14 @@ namespace StoreProject.Core
             get
             {
                 return items.Sum(x => x.Price);
+            }
+        }
+
+        public IEnumerable<CartItem> Items
+        {
+            get
+            {
+                return new ReadOnlyCollection<CartItem>(items);
             }
         }
     }

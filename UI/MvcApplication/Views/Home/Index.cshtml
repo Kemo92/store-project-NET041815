@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul>
+    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+    <li><a href="@Url.Action("Index", "Cart")">Cart</a></li>
+</ul>

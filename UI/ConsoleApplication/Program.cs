@@ -19,17 +19,21 @@ namespace StoreProject.UI.ConsoleApplication
         {
             var store = new Store();
             Cart cart = null;
+            IUserInterface userInterface = new ConsoleUserInterface();
 
             while (true)
             {
-                switch (ShowMainMenu())
+                switch (ShowMainMenu(userInterface))
                 {
                     case "l":
-                        ListProducts(store);
+                        new ListProductsUI(store).Run(userInterface);
                         break;
                     case "a":
                         cart = cart ?? new Cart();
-                        new AddProductUI(store, cart).Run();
+                        new AddProductUI(store, cart).Run(userInterface);
+                        break;
+                    case "s":
+                        new ShowCartUI(cart).Run(userInterface);
                         break;
                     case "q":
                         return;
@@ -38,28 +42,18 @@ namespace StoreProject.UI.ConsoleApplication
         }
 
         /// <summary>
-        /// List a collection of products
-        /// </summary>
-        private static void ListProducts(Store store)
-        {
-            foreach (var product in store.AllProducts())
-            {
-                Console.WriteLine(product);
-            }
-        }
-
-        /// <summary>
         /// Show the main store menu
         /// </summary>
-        private static string ShowMainMenu()
+        private static string ShowMainMenu(IUserInterface userInterface)
         {
             Console.WriteLine("Store Main Menu");
             Console.WriteLine("===============");
             Console.WriteLine("l) List products");
             Console.WriteLine("a) Add products to cart");
+            Console.WriteLine("s) Show cart");
             Console.WriteLine("q) Quit");
 
-            return Console.ReadLine().Trim().ToLower();
+            return userInterface.GetChoice();
         }
     }
 }
